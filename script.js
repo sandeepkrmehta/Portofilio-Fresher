@@ -1,3 +1,8 @@
+// Initialize EmailJS
+(function() {
+    emailjs.init("WrwyM-MJ8AYHccmVp");
+})();
+
 // Smooth scrolling for navigation links
 document.querySelectorAll('nav a').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
@@ -8,23 +13,103 @@ document.querySelectorAll('nav a').forEach(anchor => {
     });
 });
 
-// Form submission handling
+// Hamburger Menu Toggle
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navLinks.classList.toggle('active');
+});
+
+// Close menu when clicking on a nav link
+document.querySelectorAll('.nav-links li a').forEach(link => {
+    link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('active');
+    });
+});
+
+// Form Validation and Submission
 const contactForm = document.getElementById('contact-form');
+const formStatus = document.getElementById('form-status');
+
 if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
+    contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         
-        // Get form values
-        const name = this.querySelector('input[type="text"]').value;
-        const email = this.querySelector('input[type="email"]').value;
-        const message = this.querySelector('textarea').value;
+        // Reset previous messages
+        formStatus.className = 'form-status';
+        formStatus.textContent = '';
         
-        // Basic form validation
-        if (name && email && message) {
-            alert('Thank you for your message! I will get back to you soon.');
-            this.reset();
+        // Get form values
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const message = document.getElementById('message').value.trim();
+        
+        // Validate form
+        let isValid = true;
+        
+        // Name validation
+        if (name.length < 2) {
+            document.getElementById('name-error').textContent = 'Name must be at least 2 characters long';
+            document.getElementById('name-error').style.display = 'block';
+            isValid = false;
         } else {
-            alert('Please fill in all fields.');
+            document.getElementById('name-error').style.display = 'none';
+        }
+        
+        // Email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            document.getElementById('email-error').textContent = 'Please enter a valid email address';
+            document.getElementById('email-error').style.display = 'block';
+            isValid = false;
+        } else {
+            document.getElementById('email-error').style.display = 'none';
+        }
+        
+        // Message validation
+        if (message.length < 10) {
+            document.getElementById('message-error').textContent = 'Message must be at least 10 characters long';
+            document.getElementById('message-error').style.display = 'block';
+            isValid = false;
+        } else {
+            document.getElementById('message-error').style.display = 'none';
+        }
+        
+        if (!isValid) return;
+        
+        // Disable submit button
+        const submitButton = contactForm.querySelector('button[type="submit"]');
+        submitButton.disabled = true;
+        submitButton.textContent = 'Sending...';
+        
+        try {
+            // Send email using EmailJS
+            const response = await emailjs.send("service_xc4aopx", "template_qoo01zl", {
+                from_name: name,
+                from_email: email,
+                message: message
+            });
+            
+            console.log('Email sent successfully:', response);
+            
+            // Show success message
+            formStatus.className = 'form-status success';
+            formStatus.textContent = 'Message sent successfully!';
+            
+            // Reset form
+            contactForm.reset();
+        } catch (error) {
+            console.error('Error sending email:', error);
+            // Show error message
+            formStatus.className = 'form-status error';
+            formStatus.textContent = 'Failed to send message. Please try again later.';
+        } finally {
+            // Re-enable submit button
+            submitButton.disabled = false;
+            submitButton.textContent = 'Send Message';
         }
     });
 }

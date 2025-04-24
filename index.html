@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sandeep Mehta | Web Developer Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
+
 <body>
     <header>
         <nav>
@@ -62,17 +65,23 @@
             <div class="about-content">
                 <div class="about-text">
                     <h3>Sandeep Mehta</h3>
-                    <p>I am a recent Computer Science graduate with a passion for web development. My journey in coding began during my studies, where I discovered my love for creating beautiful and functional websites.</p>
-                    <p>I am constantly learning and improving my skills in modern web technologies. My goal is to create user-friendly, responsive websites that provide great user experiences while maintaining clean and efficient code.</p>
+                    <p>I am a recent Computer Science graduate with a passion for web development. My journey in coding
+                        began during my studies, where I discovered my love for creating beautiful and functional
+                        websites.</p>
+                    <p>I am constantly learning and improving my skills in modern web technologies. My goal is to create
+                        user-friendly, responsive websites that provide great user experiences while maintaining clean
+                        and efficient code.</p>
                     <div class="about-details">
                         <div class="detail-item">
                             <i class="fas fa-graduation-cap"></i>
                             <div class="detail-content">
                                 <span class="detail-title">Current Education</span>
                                 <span class="detail-text">Bansal College Of Engineering, Bhopal</span>
-                                <span class="detail-subtext">Bachelor of Technology - BTech, Computer Science and Engineering</span>
+                                <span class="detail-subtext">Bachelor of Technology - BTech, Computer Science and
+                                    Engineering</span>
                                 <span class="detail-date">Jun 2021 - Jul 2025 | CGPA: 7.39</span>
-                                <p class="detail-description">Currently in 8th semester of Bachelor's degree program.</p>
+                                <p class="detail-description">Currently in 8th semester of Bachelor's degree program.
+                                </p>
                             </div>
                         </div>
                         <div class="detail-item">
@@ -94,7 +103,8 @@
                     </div>
                 </div>
                 <div class="about-image">
-                    <img src="https://res.cloudinary.com/dbgvjxepr/image/upload/v1745492602/PassSanRes_rqqbti.jpg" alt="Sandeep Mehta">
+                    <img src="https://res.cloudinary.com/dbgvjxepr/image/upload/v1745492602/PassSanRes_rqqbti.jpg"
+                        alt="Sandeep Mehta">
                 </div>
             </div>
         </div>
@@ -148,19 +158,22 @@
                     <i class="fas fa-certificate"></i>
                     <h3>Web Development Bootcamp</h3>
                     <p class="training-date">2023</p>
-                    <p class="training-description">Comprehensive training in HTML, CSS, JavaScript, and modern web development frameworks.</p>
+                    <p class="training-description">Comprehensive training in HTML, CSS, JavaScript, and modern web
+                        development frameworks.</p>
                 </div>
                 <div class="training-card">
                     <i class="fas fa-certificate"></i>
                     <h3>React.js Certification</h3>
                     <p class="training-date">2023</p>
-                    <p class="training-description">Advanced training in React.js, including hooks, context API, and state management.</p>
+                    <p class="training-description">Advanced training in React.js, including hooks, context API, and
+                        state management.</p>
                 </div>
                 <div class="training-card">
                     <i class="fas fa-certificate"></i>
                     <h3>UI/UX Design Fundamentals</h3>
                     <p class="training-date">2023</p>
-                    <p class="training-description">Training in user interface design principles and user experience best practices.</p>
+                    <p class="training-description">Training in user interface design principles and user experience
+                        best practices.</p>
                 </div>
             </div>
         </div>
@@ -206,14 +219,18 @@
             <div class="contact-content">
                 <form id="contact-form">
                     <div class="form-group">
-                        <input type="text" placeholder="Your Name" required>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        <div class="error-message" id="name-error"></div>
                     </div>
                     <div class="form-group">
-                        <input type="email" placeholder="Your Email" required>
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        <div class="error-message" id="email-error"></div>
                     </div>
                     <div class="form-group">
-                        <textarea placeholder="Your Message" required></textarea>
+                        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                        <div class="error-message" id="message-error"></div>
                     </div>
+                    <div class="form-status" id="form-status"></div>
                     <button type="submit" class="btn primary">Send Message</button>
                 </form>
                 <div class="contact-info">
@@ -237,34 +254,21 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <p>&copy; 2025 Sandeep Mehta. All rights reserved.</p>
+                <p>&copy; 2024 Sandeep Mehta. All rights reserved.</p>
                 <div class="social-links">
-                    <a href="#"><i class="fab fa-github"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="https://github.com/sandeepkrmehta" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/sandeep-kumar-mehta/" target="_blank"
+                        rel="noopener noreferrer">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
                 </div>
             </div>
         </div>
     </footer>
 
     <script src="script.js"></script>
-    <script>
-        // Hamburger Menu Toggle
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
-
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navLinks.classList.toggle('active');
-        });
-
-        // Close menu when clicking on a nav link
-        document.querySelectorAll('.nav-links li a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navLinks.classList.remove('active');
-            });
-        });
-    </script>
 </body>
-</html> 
+
+</html>
