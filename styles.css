@@ -355,7 +355,7 @@ section {
 .about {
     background-color: var(--background);
     position: relative;
-    padding: 6rem 0;
+    padding: 2rem 0;
 }
 
 .about-content {
@@ -514,7 +514,7 @@ section {
 /* Projects Section */
 .projects {
     background-color: var(--section-bg);
-    padding: 6rem 0;
+    padding: 2rem 0;
 }
 
 .project-grid {
@@ -626,6 +626,7 @@ section {
     display: flex;
     gap: 0.6rem;
     margin-top: auto;
+    
 }
 
 .project-links .btn {
@@ -635,6 +636,7 @@ section {
     font-size: 0.8rem;
     font-weight: 500;
     border-radius: 6px;
+    
 }
 
 .project-links .btn:hover {
@@ -897,7 +899,7 @@ footer {
 /* Training Section */
 .training {
     background-color: var(--section-bg);
-    padding: 6rem 0;
+    padding: 2rem 0;
 }
 
 .training-grid {
@@ -1072,7 +1074,7 @@ footer {
     }
     
     .project-links {
-        flex-direction: column;
+        flex-direction: row;
         gap: 0.6rem;
     }
     
