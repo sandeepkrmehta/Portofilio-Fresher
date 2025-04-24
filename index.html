@@ -11,10 +11,16 @@
     <header>
         <nav>
             <div class="logo">SM</div>
-            <ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
+                <li><a href="#training">Training</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -62,8 +68,20 @@
                         <div class="detail-item">
                             <i class="fas fa-graduation-cap"></i>
                             <div class="detail-content">
-                                <span class="detail-title">Education</span>
-                                <span class="detail-text">Bachelor's in Computer Science</span>
+                                <span class="detail-title">Current Education</span>
+                                <span class="detail-text">Bansal College Of Engineering, Bhopal</span>
+                                <span class="detail-subtext">Bachelor of Technology - BTech, Computer Science and Engineering</span>
+                                <span class="detail-date">Jun 2021 - Jul 2025 | CGPA: 7.39</span>
+                                <p class="detail-description">Currently in 8th semester of Bachelor's degree program.</p>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-school"></i>
+                            <div class="detail-content">
+                                <span class="detail-title">Higher Secondary</span>
+                                <span class="detail-text">Rajendra Mishra College, Saharsa</span>
+                                <span class="detail-subtext">ISC(XII), Science with Maths</span>
+                                <span class="detail-date">Mar 2019 - Mar 2020 | Grade: 66.0%</span>
                             </div>
                         </div>
                         <div class="detail-item">
@@ -73,17 +91,10 @@
                                 <span class="detail-text">Based in India</span>
                             </div>
                         </div>
-                        <div class="detail-item">
-                            <i class="fas fa-code"></i>
-                            <div class="detail-content">
-                                <span class="detail-title">Status</span>
-                                <span class="detail-text">Fresh Graduate</span>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1fc722d8d2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Sandeep Mehta">
+                    <img src="https://res.cloudinary.com/dbgvjxepr/image/upload/v1745492602/PassSanRes_rqqbti.jpg" alt="Sandeep Mehta">
                 </div>
             </div>
         </div>
@@ -108,6 +119,48 @@
                 <div class="skill-card">
                     <i class="fab fa-react"></i>
                     <h3>React</h3>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-database"></i>
+                    <h3>MySQL</h3>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-java"></i>
+                    <h3>Core Java</h3>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-python"></i>
+                    <h3>Python</h3>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-code"></i>
+                    <h3>Django</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="training" class="training">
+        <div class="container">
+            <h2 class="section-title">Training & Certifications</h2>
+            <div class="training-grid">
+                <div class="training-card">
+                    <i class="fas fa-certificate"></i>
+                    <h3>Web Development Bootcamp</h3>
+                    <p class="training-date">2023</p>
+                    <p class="training-description">Comprehensive training in HTML, CSS, JavaScript, and modern web development frameworks.</p>
+                </div>
+                <div class="training-card">
+                    <i class="fas fa-certificate"></i>
+                    <h3>React.js Certification</h3>
+                    <p class="training-date">2023</p>
+                    <p class="training-description">Advanced training in React.js, including hooks, context API, and state management.</p>
+                </div>
+                <div class="training-card">
+                    <i class="fas fa-certificate"></i>
+                    <h3>UI/UX Design Fundamentals</h3>
+                    <p class="training-date">2023</p>
+                    <p class="training-description">Training in user interface design principles and user experience best practices.</p>
                 </div>
             </div>
         </div>
@@ -166,15 +219,15 @@
                 <div class="contact-info">
                     <div class="info-item">
                         <i class="fas fa-envelope"></i>
-                        <p>your.email@example.com</p>
+                        <p>sandeepmehta.tech@gmail.com</p>
                     </div>
                     <div class="info-item">
                         <i class="fas fa-phone"></i>
-                        <p>+1 234 567 890</p>
+                        <p>+91- 7261048972</p>
                     </div>
                     <div class="info-item">
                         <i class="fas fa-map-marker-alt"></i>
-                        <p>Your Location</p>
+                        <p>Bhopal, Madhya Pradesh</p>
                     </div>
                 </div>
             </div>
@@ -184,7 +237,7 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <p>&copy; 2024 Sandeep Mehta. All rights reserved.</p>
+                <p>&copy; 2025 Sandeep Mehta. All rights reserved.</p>
                 <div class="social-links">
                     <a href="#"><i class="fab fa-github"></i></a>
                     <a href="#"><i class="fab fa-linkedin"></i></a>
@@ -195,5 +248,23 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        // Hamburger Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a nav link
+        document.querySelectorAll('.nav-links li a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html> 
