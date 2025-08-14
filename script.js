@@ -352,7 +352,7 @@ contactForm?.addEventListener('submit', async (e) => {
     
     try {
         // Send email using EmailJS
-        await emailjs.send("service_xc4aopx", "template_qoo01zl", {
+        await email.send("service_xc4aopx", "template_qoo01zl", {
             from_name: name,
             from_email: email,
             subject: subject,
