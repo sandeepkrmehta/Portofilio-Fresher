@@ -4,366 +4,808 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sandeep Mehta | Web Developer Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Sandeep Mehta | Full Stack Developer & Java Expert</title>
+    <meta name="description"
+        content="Sandeep Mehta - Full Stack Developer specializing in Java, Spring Boot, React, and modern web technologies. Creating innovative digital solutions with clean code and exceptional user experiences.">
+    <meta name="keywords"
+        content="Full Stack Developer, Java Developer, Spring Boot, React, Web Development, JavaScript, Python, Portfolio">
+    <meta name="author" content="Sandeep Mehta">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Sandeep Mehta | Full Stack Developer & Java Expert">
+    <meta property="og:description"
+        content="Full Stack Developer specializing in Java, Spring Boot, React, and modern web technologies.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sandeep-mehta-portfolio.com">
+    <meta property="og:image"
+        content="https://res.cloudinary.com/dbgvjxepr/image/upload/v1745492602/PassSanRes_rqqbti.jpg">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sandeep Mehta | Full Stack Developer">
+    <meta name="twitter:description"
+        content="Full Stack Developer specializing in Java, Spring Boot, React, and modern web technologies.">
+    <meta name="twitter:image"
+        content="https://res.cloudinary.com/dbgvjxepr/image/upload/v1745492602/PassSanRes_rqqbti.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://sandeep-mehta-portfolio.com">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍💻</text></svg>">
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://res.cloudinary.com">
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- EmailJS -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Sandeep Mehta",
+        "jobTitle": "Full Stack Developer",
+        "description": "Full Stack Developer specializing in Java, Spring Boot, React, and modern web technologies",
+        "url": "https://sandeep-mehta-portfolio.com",
+        "email": "sandeepmehta.tech@gmail.com",
+        "telephone": "+91-7261048972",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Noida Sector 63",
+            "addressRegion": "Uttar Pradesh",
+            "addressCountry": "India"
+        },
+        "sameAs": [
+            "https://github.com/sandeepkrmehta",
+            "https://www.linkedin.com/in/sandeep-kumar-mehta/"
+        ],
+        "knowsAbout": ["Java", "Spring Boot", "React", "JavaScript", "Python", "Web Development", "Full Stack Development"]
+    }
+    </script>
 </head>
 
 <body>
-    <header>
-        <nav>
-            <div class="logo">SM</div>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <div class="loading-logo">SM</div>
+            <div class="loading-text">Loading Portfolio...</div>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
             </div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#training">Training</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+        </div>
+    </div>
+
+    <!-- Cursor -->
+    <div class="custom-cursor" id="cursor">
+        <div class="cursor-dot"></div>
+        <div class="cursor-outline"></div>
+    </div>
+
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <div class="logo">
+                    <span class="logo-text">SM</span>
+                    <div class="logo-dot"></div>
+                </div>
+            </div>
+
+            <div class="nav-toggle" id="navToggle">
+                <span class="nav-toggle-line"></span>
+                <span class="nav-toggle-line"></span>
+                <span class="nav-toggle-line"></span>
+            </div>
+
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+                <li class="nav-item"><a href="#training" class="nav-link">Training</a></li>
+                <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <div class="hero-text">
-                <div class="greeting">Hello, I'm</div>
-                <h1>Sandeep Mehta</h1>
-                <div class="typing-text">
-                    <span class="typed-text">Web Developer</span>
-                    <span class="cursor">&nbsp;</span>
-                </div>
-                <p class="hero-description">Creating beautiful and functional web experiences</p>
-                <div class="cta-buttons">
-                    <a href="#projects" class="btn primary">
-                        <span>View My Work</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                    <a href="#contact" class="btn secondary">
-                        <span>Contact Me</span>
-                        <i class="fas fa-envelope"></i>
-                    </a>
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-bg">
+                <div class="hero-gradient"></div>
+                <div class="hero-particles" id="particles"></div>
+            </div>
+
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <div class="hero-greeting" data-aos="fade-up">
+                            <span class="greeting-text">Hello, I'm</span>
+                            <div class="greeting-wave">👋</div>
+                        </div>
+
+                        <h1 class="hero-title" data-aos="fade-up" data-aos-delay="200">
+                            <span class="title-line">Sandeep</span>
+                            <span class="title-line title-highlight">Mehta</span>
+                        </h1>
+
+                        <div class="hero-subtitle" data-aos="fade-up" data-aos-delay="400">
+                            <span class="typing-container">
+                                <span class="typing-text" id="typingText"></span>
+                                <span class="typing-cursor">|</span>
+                            </span>
+                        </div>
+
+                        <p class="hero-description" data-aos="fade-up" data-aos-delay="600">
+                            I’m a Full Stack Developer who loves building web applications that are easy to use and
+                            efficient. I enjoy writing clean code and creating smooth, intuitive user experiences. </p>
+
+                        <div class="hero-cta" data-aos="fade-up" data-aos-delay="800">
+                            <a href="#projects" class="btn btn-primary">
+                                <span>View My Work</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                            <a href="#contact" class="btn btn-secondary">
+                                <span>Let's Talk</span>
+                                <i class="fas fa-message"></i>
+                            </a>
+                        </div>
+
+                        <div class="hero-social" data-aos="fade-up" data-aos-delay="1000">
+                            <a href="https://github.com/sandeepkrmehta" target="_blank" rel="noopener noreferrer"
+                                class="social-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/sandeep-kumar-mehta/" target="_blank"
+                                rel="noopener noreferrer" class="social-link">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="mailto:sandeepmehta.tech@gmail.com" class="social-link">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="hero-image" data-aos="fade-left" data-aos-delay="600">
+                        <div class="image-container">
+                            <img src="https://res.cloudinary.com/dbgvjxepr/image/upload/v1745492602/PassSanRes_rqqbti.jpg"
+                                alt="Sandeep Mehta - Full Stack Developer" loading="eager">
+                            <div class="image-overlay"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="hero-shapes">
-            <div class="shape shape-1"></div>
-            <div class="shape shape-2"></div>
-            <div class="shape shape-3"></div>
-        </div>
-    </section>
 
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>Sandeep Mehta</h3>
-                    <p>I am a recent Computer Science graduate with a passion for web development. My journey in coding
-                        began during my studies, where I discovered my love for creating beautiful and functional
-                        websites.</p>
-                    <p>I am constantly learning and improving my skills in modern web technologies. My goal is to create
-                        user-friendly, responsive websites that provide great user experiences while maintaining clean
-                        and efficient code.</p>
-                    <div class="about-details">
-                        <div class="detail-item">
-                            <i class="fas fa-graduation-cap"></i>
-                            <div class="detail-content">
-                                <span class="detail-title">Current Education</span>
-                                <span class="detail-text">Bansal College Of Engineering, Bhopal</span>
-                                <span class="detail-subtext">Bachelor of Technology - BTech, Computer Science and
-                                    Engineering</span>
-                                <span class="detail-date">  SEPT 2021 - Jul 2025 | CGPA: 7.39</span>
-                                <p class="detail-description">Currently in 8th semester of Bachelor's degree program.
-                                </p>
+            <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="1200">
+                <div class="scroll-text">Scroll Down</div>
+                <div class="scroll-arrow">
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-subtitle">Get to know me</span>
+                    <h2 class="section-title">About Me</h2>
+                </div>
+
+                <div class="about-content">
+                    <div class="about-text" data-aos="fade-right">
+                        <div class="about-intro">
+                            <h3>Passionate Full Stack Developer</h3>
+                            <p>I’m a Computer Science student with a strong passion for building innovative web
+                                solutions. My journey in software development is fueled by curiosity and a commitment to
+                                constantly learning and improving.</p>
+                        </div>
+
+                        <div class="about-details">
+                            <div class="detail-card">
+                                <div class="detail-icon">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <div class="detail-content">
+                                    <h4>Education</h4>
+                                    <p class="detail-title">Bansal College Of Engineering, Bhopal</p>
+                                    <p class="detail-subtitle">BTech in Computer Science & Engineering</p>
+                                    <p class="detail-meta">2021 - 2025 | CGPA: 7.45</p>
+                                </div>
+                            </div>
+
+                            <div class="detail-card">
+                                <div class="detail-icon">
+                                    <i class="fas fa-code"></i>
+                                </div>
+                                <div class="detail-content">
+                                    <h4>Specialization</h4>
+                                    <p class="detail-title">Full Stack Development</p>
+                                    <p class="detail-subtitle">Java, Spring Boot, Hibernate, Servlet, React, Python,
+                                        Django</p>
+                                    <p class="detail-meta">Modern Web Technologies</p>
+                                </div>
+                            </div>
+
+                            <div class="detail-card">
+                                <div class="detail-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="detail-content">
+                                    <h4>Location</h4>
+                                    <p class="detail-title">Noida, Uttar Pradesh</p>
+                                    <p class="detail-subtitle">India</p>
+                                    <p class="detail-meta">Available for Work from Office / Remote / Hybrid Work</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="detail-item">
-                            <i class="fas fa-school"></i>
-                            <div class="detail-content">
-                                <span class="detail-title">Higher Secondary</span>
-                                <span class="detail-text">Rajendra Mishra College, Saharsa</span>
-                                <span class="detail-subtext">ISC(XII), Science with Maths</span>
-                                <span class="detail-date">Mar 2019 - Mar 2020 | Grade: 66.0%</span>
+                    </div>
+
+                    <div class="about-stats" data-aos="fade-left">
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <div class="stat-number" data-count="5">0</div>
+                                <div class="stat-label">Projects Completed</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number" data-count="4">0</div>
+                                <div class="stat-label">Certifications</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number" data-count="12">0</div>
+                                <div class="stat-label">Technologies</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number" data-count="1">0</div>
+                                <div class="stat-label">Years Learning</div>
                             </div>
                         </div>
-                        <div class="detail-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div class="detail-content">
-                                <span class="detail-title">Location</span>
-                                <span class="detail-text">Based in India</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="skills">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-subtitle">What I work with</span>
+                    <h2 class="section-title">Skills & Technologies</h2>
+                </div>
+
+                <div class="skills-content">
+                    <div class="skills-category" data-aos="fade-up" data-aos-delay="200">
+                        <h3 class="category-title">
+                            <i class="fas fa-server"></i>
+                            Backend Development
+                        </h3>
+                        <div class="skills-grid">
+                            <div class="skill-card">
+                                <div class="skill-icon">
+                                    <i class="fab fa-java"></i>
+                                </div>
+                                <h4>Java</h4>
+                                <div class="skill-level">
+                                    <div class="skill-bar" data-level="85"></div>
+                                </div>
+                            </div>
+                            <div class="skill-card">
+                                <div class="skill-icon">
+                                    <i class="fas fa-leaf"></i>
+                                </div>
+                                <h4>Spring Boot</h4>
+                                <div class="skill-level">
+                                    <div class="skill-bar" data-level="80"></div>
+                                </div>
+                            </div>
+                            <div class="skill-card">
+                                <div class="skill-icon">
+                                    <i class="fas fa-database"></i>
+                                </div>
+                                <h4>Hibernate</h4>
+                                <div class="skill-level">
+                                    <div class="skill-bar" data-level="75"></div>
+                                </div>
+                            </div>
+                            <div class="skill-card">
+                                <div class="skill-icon">
+                                    <i class="fas fa-cogs"></i>
+                                </div>
+                                <h4>Servlet</h4>
+                                <div class="skill-level">
+                                    <div class="skill-bar" data-level="70"></div>
+                                </div>
+                            </div>
+                            <div class="skill-card">
+                                <div class="skill-icon">
+                                    <i class="fab fa-python"></i>
+                                </div>
+                                <h4>Python</h4>
+                                <div class="skill-level">
+                                    <div class="skill-bar" data-level="80"></div>
+                                </div>
+                            </div>
+                            <div class="skill-card">
+                                <div class="skill-icon">
+                                    <i class="fas fa-code"></i>
+                                </div>
+                                <h4>Django</h4>
+                                <div class="skill-level">
+                                    <div class="skill-bar" data-level="75"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skills-category" data-aos="fade-up" data-aos-delay="400">
+                        <h3 class="category-title">
+                            <i class="fas fa-laptop-code"></i>
+                            Frontend Development
+                        </h3>
+                        <div class="skills-grid">
+                            <div class="skill-card">
+                                <div class="skill-icon">
+                                    <i class="fab fa-html5"></i>
+                                </div>
+                                <h4>HTML5</h4>
+                                <div class="skill-level">
+                                    <div class="skill-bar" data-level="95"></div>
+                                </div>
+                            </div>
+                            <div class="skill-card">
+                                <div class="skill-icon">
+                                    <i class="fab fa-css3-alt"></i>
+                                </div>
+                                <h4>CSS3</h4>
+                                <div class="skill-level">
+                                    <div class="skill-bar" data-level="90"></div>
+                                </div>
+                            </div>
+                            <div class="skill-card">
+                                <div class="skill-icon">
+                                    <i class="fab fa-js"></i>
+                                </div>
+                                <h4>JavaScript</h4>
+                                <div class="skill-level">
+                                    <div class="skill-bar" data-level="90"></div>
+                                </div>
+                            </div>
+                            <div class="skill-card">
+                                <div class="skill-icon">
+                                    <i class="fab fa-react"></i>
+                                </div>
+                                <h4>React</h4>
+                                <div class="skill-level">
+                                    <div class="skill-bar" data-level="85"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skills-category" data-aos="fade-up" data-aos-delay="600">
+                        <h3 class="category-title">
+                            <i class="fas fa-database"></i>
+                            Database & Tools
+                        </h3>
+                        <div class="skills-grid">
+                            <div class="skill-card">
+                                <div class="skill-icon">
+                                    <i class="fas fa-database"></i>
+                                </div>
+                                <h4>MySQL</h4>
+                                <div class="skill-level">
+                                    <div class="skill-bar" data-level="80"></div>
+                                </div>
+                            </div>
+                            <div class="skill-card">
+                                <div class="skill-icon">
+                                    <i class="fas fa-database"></i>
+                                </div>
+                                <h4>Oracle 10g</h4>
+                                <div class="skill-level">
+                                    <div class="skill-bar" data-level="80"></div>
+                                </div>
+                            </div>
+                            <div class="skill-card">
+                                <div class="skill-icon">
+                                    <i class="fab fa-git-alt"></i>
+                                </div>
+                                <h4>Git</h4>
+                                <div class="skill-level">
+                                    <div class="skill-bar" data-level="85"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="about-image">
-                    <img src="https://res.cloudinary.com/dbgvjxepr/image/upload/v1745492602/PassSanRes_rqqbti.jpg"
-                        alt="Sandeep Mehta">
-                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2 class="section-title">My Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <i class="fab fa-html5"></i>
-                    <h3>HTML5</h3>
+        <section id="training" class="training">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-subtitle">My learning journey</span>
+                    <h2 class="section-title">Training & Certifications</h2>
                 </div>
-                <div class="skill-card">
-                    <i class="fab fa-css3-alt"></i>
-                    <h3>CSS3</h3>
-                </div>
-                <div class="skill-card">
-                    <i class="fab fa-js"></i>
-                    <h3>JavaScript</h3>
-                </div>
-                <div class="skill-card">
-                    <i class="fab fa-react"></i>
-                    <h3>React</h3>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-database"></i>
-                    <h3>MySQL</h3>
-                </div>
-                <div class="skill-card">
-                    <i class="fab fa-java"></i>
-                    <h3>Core Java</h3>
-                </div>
-                <div class="skill-card">
-                    <i class="fab fa-python"></i>
-                    <h3>Python</h3>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-code"></i>
-                    <h3>Django</h3>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section id="training" class="training">
-        <div class="container">
-            <h2 class="section-title">Training & Certifications</h2>
-            <div class="training-grid">
-                <div class="training-card">
-                    <i class="fas fa-certificate"></i>
-                    <h3>KodNest</h3>
-                    <p class="training-date">Jan 2025 - Ongoing</p>
-                    <p class="training-description">Java/Python Full Stack Development</p>
-                    <div class="training-skills">
-                        <span>Core Java</span>
-                        <span>Python</span>
-                    </div>
-                </div>
-                <div class="training-card">
-                    <i class="fas fa-certificate"></i>
-                    <h3>Cisco Networking Academy</h3>
-                    <p class="training-date">Aug 2024 - Nov 2024</p>
-                    <p class="training-description">Python Programming</p>
-                    <div class="training-skills">
-                        <span>Python</span>
-                    </div>
-                </div>
-                <div class="training-card">
-                    <i class="fas fa-certificate"></i>
-                    <h3>PwSkills</h3>
-                    <p class="training-date">July 2023 - Feb 2024</p>
-                    <p class="training-description">MERN Stack Web Development</p>
-                    <div class="training-skills">
-                        <span>HTML, CSS</span>
-                        <span>JavaScript</span>
-                        <span>React</span>
-                        <span>MongoDB</span>
-                        <span>Express.js</span>
-                        <span>Node.js</span>
-                        <span>Git</span>
-                        <span>Postman Tool </span>
-                    </div>
-                </div>
-                <div class="training-card">
-                    <i class="fas fa-certificate"></i>
-                    <h3>SmarInternz</h3>
-                    <p class="training-date">July 2024 - Aug 2024</p>
-                    <p class="training-description">Salesforce Development</p>
-                    <div class="training-skills">
-                        <span>Salesforce Fundamentals</span>
-                        <span>LWC</span>
-                        <span>Apex</span>
-                        <span>Process Automation</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                <div class="training-timeline">
+                    <div class="timeline-item" data-aos="fade-right">
+                        <div class="timeline-marker">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h3>Java/Python Full Stack Development</h3>
+                                <span class="timeline-date">Jan 2025 - July 2025</span>
+                            </div>
+                            <p class="timeline-company">KodNest</p>
+                            <p class="timeline-description">I completed 6 months of full-stack development training,
+                                working with Java and Python.</p>
+                            <div class="timeline-skills">
+                                <span class="skill-tag">Core Java</span>
+                                <span class="skill-tag">Adv. Java</span>
+                                <span class="skill-tag">JDBC</span>
+                                <span class="skill-tag">Servlet</span>
+                                <span class="skill-tag">Spring Boot</span>
+                                <span class="skill-tag">Hibernate</span>
+                                <span class="skill-tag">MySQL</span>
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">Django</span>
 
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2 class="section-title">My Projects</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://res.cloudinary.com/dbgvjxepr/image/upload/v1731103502/68747470733a2f2f7265732e636c6f7564696e6172792e636f6d2f646877627973686d6f2f696d6167652f75706c6f61642f76313639353238333639392f70726f6a656374253230696d616765732f6c6d732d686f6d652e706e67_kulmvk.png" alt="LMS Portal">
-                    </div>
-                    <div class="project-info">
-                        <h3>LMS Portal</h3>
-                        <p class="project-description">A Learning Management System for education industry with course management, assignments, and learning materials.</p>
-                        <div class="project-skills">
-                            <span>React.js</span>
-                            <span>MongoDB</span>
-                            <span>Node.js</span>
-                            <span>Express.js</span>
-                            <span>Tailwind CSS</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://lms-mern-project-hghh.onrender.com/" target="_blank" rel="noopener noreferrer" class="btn small">View Demo</a>
-                            <a href="https://github.com/sandeepkrmehta/LMS-MERN-PROJECT" target="_blank" rel="noopener noreferrer" class="btn small">Source Code</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://res.cloudinary.com/dbgvjxepr/image/upload/v1732457265/Screenshot_2024-11-24_181740_oyrq1i.png" alt="Infosten">
-                    </div>
-                    <div class="project-info">
-                        <h3>Infosten</h3>
-                        <p class="project-description">A social forum application for volunteer registration in charitable teaching events.</p>
-                        <div class="project-skills">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
+
+                    <div class="timeline-item" data-aos="fade-left">
+                        <div class="timeline-marker">
+                            <i class="fas fa-certificate"></i>
                         </div>
-                        <div class="project-links">
-                            <a href="https://infosten.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn small">View Demo</a>
-                            <a href="https://github.com/sandeepkrmehta/Infosten" target="_blank" rel="noopener noreferrer" class="btn small">Source Code</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://res.cloudinary.com/dbgvjxepr/image/upload/v1731109128/Spotify_rl6t3j.png" alt="Spotify Clone">
-                    </div>
-                    <div class="project-info">
-                        <h3>Spotify Clone</h3>
-                        <p class="project-description">A music streaming application clone with playlist creation and music discovery features.</p>
-                        <div class="project-skills">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://sandeepkrmehta.github.io/Spotify-clone/" target="_blank" rel="noopener noreferrer" class="btn small">View Demo</a>
-                            <a href="https://github.com/sandeepkrmehta/Spotify-clone" target="_blank" rel="noopener noreferrer" class="btn small">Source Code</a>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h3>Python Programming</h3>
+                                <span class="timeline-date">Aug 2024 - Nov 2024</span>
+                            </div>
+                            <p class="timeline-company">Cisco Networking Academy</p>
+                            <p class="timeline-description">Advanced Python programming concepts and practical
+                                applications.</p>
+                            <div class="timeline-skills">
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">Programming</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://res.cloudinary.com/dbgvjxepr/image/upload/v1731102356/Hotel_h0ctuz.jpg" alt="Hotel Management System">
-                    </div>
-                    <div class="project-info">
-                        <h3>Hotel Management System</h3>
-                        <p class="project-description">A GUI-based system for managing hotel front desk operations including check-ins, check-outs, and reservations.</p>
-                        <div class="project-skills">
-                            <span>Python</span>
-                            <span>MySQL</span>
+
+                    <div class="timeline-item" data-aos="fade-right">
+                        <div class="timeline-marker">
+                            <i class="fas fa-certificate"></i>
                         </div>
-                        <div class="project-links">
-                            <a href="https://github.com/Priyansh-Gour/Hotel-management-system" target="_blank" rel="noopener noreferrer" class="btn small">View Demo</a>
-                            <a href="https://github.com/Priyansh-Gour/Hotel-management-system" target="_blank" rel="noopener noreferrer" class="btn small">Source Code</a>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h3>Salesforce Development</h3>
+                                <span class="timeline-date">July 2024 - Aug 2024</span>
+                            </div>
+                            <p class="timeline-company">SmarInternz</p>
+                            <p class="timeline-description">Salesforce platform development and customization.</p>
+                            <div class="timeline-skills">
+                                <span class="skill-tag">Salesforce</span>
+                                <span class="skill-tag">LWC</span>
+                                <span class="skill-tag">Apex</span>
+                                <span class="skill-tag">Process Automation</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item" data-aos="fade-left">
+                        <div class="timeline-marker">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h3>MERN Stack Web Development</h3>
+                                <span class="timeline-date">July 2023 - Feb 2024</span>
+                            </div>
+                            <p class="timeline-company">PwSkills</p>
+                            <p class="timeline-description">Complete MERN stack development with modern web
+                                technologies.</p>
+                            <div class="timeline-skills">
+                                <span class="skill-tag">MongoDB</span>
+                                <span class="skill-tag">Express.js</span>
+                                <span class="skill-tag">React</span>
+                                <span class="skill-tag">Node.js</span>
+                                <span class="skill-tag">Git</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-content">
-                <form id="contact-form">
-                    <div class="form-group">
-                        <input type="text" id="name" name="name" placeholder="Your Name" required>
-                        <div class="error-message" id="name-error"></div>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" id="email" name="email" placeholder="Your Email" required>
-                        <div class="error-message" id="email-error"></div>
-                    </div>
-                    <div class="form-group">
-                        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
-                        <div class="error-message" id="message-error"></div>
-                    </div>
-                    <div class="form-status" id="form-status"></div>
-                    <button type="submit" class="btn primary">Send Message</button>
-                </form>
-                <div class="contact-info">
-                    <div class="info-item">
-                        <i class="fas fa-envelope"></i>
-                        <p>sandeepmehta.tech@gmail.com</p>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-phone"></i>
-                        <p>+91- 7261048972</p>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <p>Bhopal, Madhya Pradesh</p>
-                    </div>
+        <section id="projects" class="projects">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-subtitle">My recent work</span>
+                    <h2 class="section-title">Featured Projects</h2>
+                </div>
+
+                <div class="projects-grid">
+                    <article class="project-card featured" data-aos="fade-up" data-aos-delay="200">
+                        <div class="project-image">
+                            <img src="https://res.cloudinary.com/dbgvjxepr/image/upload/v1731103502/68747470733a2f2f7265732e636c6f7564696e6172792e636f6d2f646877627973686d6f2f696d6167652f75706c6f61642f76313639353238333639392f70726f6a656374253230696d616765732f6c6d732d686f6d652e706e67_kulmvk.png"
+                                alt="LMS Portal - Learning Management System" loading="lazy">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="https://lms-mern-project-hghh.onrender.com/" target="_blank"
+                                        rel="noopener noreferrer" class="project-link"
+                                        aria-label="View LMS Portal Demo">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                    <a href="https://github.com/sandeepkrmehta/LMS-MERN-PROJECT" target="_blank"
+                                        rel="noopener noreferrer" class="project-link"
+                                        aria-label="View LMS Portal Source Code">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-category">Full Stack</div>
+                            <h3 class="project-title">LMS Portal</h3>
+                            <p class="project-description">A Learning Management System for education, including course
+                                management, assignments, progress tracking, and interactive learning tools.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">React.js</span>
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">MongoDB</span>
+                                <span class="tech-tag">Express.js</span>
+                                <span class="tech-tag">Tailwind CSS</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="project-image">
+                            <img src="https://res.cloudinary.com/dbgvjxepr/image/upload/v1732457265/Screenshot_2024-11-24_181740_oyrq1i.png"
+                                alt="Infosten - Social Forum Application" loading="lazy">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="https://infosten.netlify.app/" target="_blank" rel="noopener noreferrer"
+                                        class="project-link" aria-label="View Infosten Demo">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                    <a href="https://github.com/sandeepkrmehta/Infosten" target="_blank"
+                                        rel="noopener noreferrer" class="project-link"
+                                        aria-label="View Infosten Source Code">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-category">Frontend</div>
+                            <h3 class="project-title">Infosten</h3>
+                            <p class="project-description">A social forum application designed for volunteer
+                                registration in charitable teaching events with community engagement features.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">HTML5</span>
+                                <span class="tech-tag">CSS3</span>
+                                <span class="tech-tag">JavaScript</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-aos="fade-up" data-aos-delay="600">
+                        <div class="project-image">
+                            <img src="https://res.cloudinary.com/dbgvjxepr/image/upload/v1731109128/Spotify_rl6t3j.png"
+                                alt="Spotify Clone - Music Streaming App" loading="lazy">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="https://sandeepkrmehta.github.io/Spotify-clone/" target="_blank"
+                                        rel="noopener noreferrer" class="project-link"
+                                        aria-label="View Spotify Clone Demo">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                    <a href="https://github.com/sandeepkrmehta/Spotify-clone" target="_blank"
+                                        rel="noopener noreferrer" class="project-link"
+                                        aria-label="View Spotify Clone Source Code">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-category">Frontend</div>
+                            <h3 class="project-title">Spotify Clone</h3>
+                            <p class="project-description">A music streaming application clone with playlist creation,
+                                music discovery, and responsive design features.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">HTML5</span>
+                                <span class="tech-tag">CSS3</span>
+                                <span class="tech-tag">JavaScript</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-aos="fade-up" data-aos-delay="800">
+                        <div class="project-image">
+                            <img src="https://res.cloudinary.com/dbgvjxepr/image/upload/v1731102356/Hotel_h0ctuz.jpg"
+                                alt="Hotel Management System" loading="lazy">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="https://github.com/Priyansh-Gour/Hotel-management-system" target="_blank"
+                                        rel="noopener noreferrer" class="project-link"
+                                        aria-label="View Hotel Management System">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                    <a href="https://github.com/Priyansh-Gour/Hotel-management-system" target="_blank"
+                                        rel="noopener noreferrer" class="project-link"
+                                        aria-label="View Hotel Management System Source Code">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-category">Desktop App</div>
+                            <h3 class="project-title">Hotel Management System</h3>
+                            <p class="project-description">A GUI-based system for managing hotel operations including
+                                check-ins, check-outs, reservations, and guest management.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">MySQL</span>
+                                <span class="tech-tag">GUI</span>
+                            </div>
+                        </div>
+                    </article>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <footer>
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-subtitle">Let's work together</span>
+                    <h2 class="section-title">Get In Touch</h2>
+                </div>
+
+                <div class="contact-content">
+                    <div class="contact-info" data-aos="fade-right">
+                        <div class="contact-text">
+                            <h3>Let's discuss your project</h3>
+                            <p>I'm always interested in new opportunities and exciting projects. Whether you have a
+                                question or just want to say hi, I'll try my best to get back to you!</p>
+                        </div>
+
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact-content-text">
+                                    <h4>Email</h4>
+                                    <a href="mailto:sandeepmehta.tech@gmail.com">sandeepmehta.tech@gmail.com</a>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="contact-content-text">
+                                    <h4>Phone</h4>
+                                    <a href="tel:+917261048972">+91 7261048972</a>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="contact-content-text">
+                                    <h4>Location</h4>
+                                    <span>Bhopal, Madhya Pradesh, India</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form class="contact-form" id="contactForm" data-aos="fade-left">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                            <div class="form-error" id="nameError"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                            <div class="form-error" id="emailError"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                            <div class="form-error" id="subjectError"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                            <div class="form-error" id="messageError"></div>
+                        </div>
+
+                        <div class="form-status" id="formStatus"></div>
+
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <p>&copy; 2024 Sandeep Mehta. All rights reserved.</p>
-                <div class="social-links">
-                    <a href="https://github.com/sandeepkrmehta" target="_blank" rel="noopener noreferrer">
+                <div class="footer-text">
+                    <p>&copy; <span id="currentYear">2024</span> Sandeep Mehta. All rights reserved.</p>
+                </div>
+                <div class="footer-social">
+                    <a href="https://github.com/sandeepkrmehta" target="_blank" rel="noopener noreferrer"
+                        class="social-link">
                         <i class="fab fa-github"></i>
                     </a>
-                    <a href="https://www.linkedin.com/in/sandeep-kumar-mehta/" target="_blank"
-                        rel="noopener noreferrer">
+                    <a href="https://www.linkedin.com/in/sandeep-kumar-mehta/" target="_blank" rel="noopener noreferrer"
+                        class="social-link">
                         <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:sandeepmehta.tech@gmail.com" class="social-link">
+                        <i class="fas fa-envelope"></i>
                     </a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <a href="#" class="back-to-top" id="backToTop">
-        <i class="fas fa-arrow-up"></i>
-    </a>
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
 
+    <!-- Chatbot -->
     <div class="chatbot-container">
-        <button class="chatbot-button" id="chatbotButton">
+        <button class="chatbot-toggle" id="chatbotToggle" aria-label="Open chat">
             <i class="fas fa-comments"></i>
         </button>
         <div class="chatbot-window" id="chatbotWindow">
             <div class="chatbot-header">
-                <h3>Chat with Me</h3>
-                <button class="close-chat" id="closeChat">
+                <h3>Chat with me</h3>
+                <button class="chatbot-close" id="chatbotClose" aria-label="Close chat">
                     <i class="fas fa-times"></i>
                 </button>
             </div>
             <div class="chatbot-messages" id="chatbotMessages">
-                <div class="message bot">
+                <div class="message bot-message">
                     <p>Hello! How can I help you today?</p>
                 </div>
             </div>
             <div class="chatbot-input">
-                <input type="text" id="chatInput" placeholder="Type your message...">
-                <button id="sendMessage">
+                <input type="text" id="chatInput" placeholder="Type your message..." maxlength="500">
+                <button id="sendMessage" aria-label="Send message">
                     <i class="fas fa-paper-plane"></i>
                 </button>
             </div>
