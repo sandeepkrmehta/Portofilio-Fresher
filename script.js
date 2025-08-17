@@ -1,8 +1,3 @@
-// Initialize EmailJS
-(function() {
-    emailjs.init("WrwyM-MJ8AYHccmVp");
-})();
-
 // Global variables
 let isLoading = true;
 let currentSection = 'home';
@@ -18,7 +13,6 @@ const backToTop = document.getElementById('backToTop');
 const chatbotToggle = document.getElementById('chatbotToggle');
 const chatbotWindow = document.getElementById('chatbotWindow');
 const chatbotClose = document.getElementById('chatbotClose');
-const contactForm = document.getElementById('contactForm');
 
 // Loading Screen
 window.addEventListener('load', () => {
@@ -305,16 +299,23 @@ function initAOS() {
 }
 
 // Contact Form
-contactForm?.addEventListener('submit', async (e) => {
+// Initialize EmailJS
+(function() {
+    emailjs.init("WrwyM-MJ8AYHccmVp"); // ✅ tumhara public key
+})();
+
+const contactForm = document.getElementById('contactForm');
+
+contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     
     const formData = new FormData(contactForm);
-    const formStatus = document.getElementById('formStatus');
     const submitButton = contactForm.querySelector('button[type="submit"]');
     
     // Clear previous errors
     document.querySelectorAll('.form-error').forEach(error => {
         error.style.display = 'none';
+        error.textContent = '';
     });
     
     // Validate form
@@ -328,22 +329,18 @@ contactForm?.addEventListener('submit', async (e) => {
         showError('nameError', 'Name must be at least 2 characters long');
         isValid = false;
     }
-    
     if (!isValidEmail(email)) {
         showError('emailError', 'Please enter a valid email address');
         isValid = false;
     }
-    
     if (subject.length < 5) {
         showError('subjectError', 'Subject must be at least 5 characters long');
         isValid = false;
     }
-    
     if (message.length < 10) {
         showError('messageError', 'Message must be at least 10 characters long');
         isValid = false;
     }
-    
     if (!isValid) return;
     
     // Show loading state
@@ -351,15 +348,15 @@ contactForm?.addEventListener('submit', async (e) => {
     submitButton.innerHTML = '<span>Sending...</span><i class="fas fa-spinner fa-spin"></i>';
     
     try {
-        // Send email using EmailJS
-        await email.send("service_xc4aopx", "template_qoo01zl", {
-            from_name: name,
-            from_email: email,
-            subject: subject,
-            message: message
+        // ✅ Match with EmailJS template variables
+        await emailjs.send("service_xc4aopx", "template_qoo01zl", {
+            to_name: "Admin",       // static (admin/receiver ka naam)
+            user_name: name,        // user ka name
+            user_email: email,      // user ka email
+            from_subject: subject,  // subject
+            message: message        // message body
         });
         
-        // Show success message
         showFormStatus('success', 'Message sent successfully! I\'ll get back to you soon.');
         contactForm.reset();
         
@@ -367,38 +364,27 @@ contactForm?.addEventListener('submit', async (e) => {
         console.error('Error sending email:', error);
         showFormStatus('error', 'Failed to send message. Please try again later.');
     } finally {
-        // Reset button
         submitButton.disabled = false;
         submitButton.innerHTML = '<span>Send Message</span><i class="fas fa-paper-plane"></i>';
     }
 });
 
-function showError(elementId, message) {
-    const errorElement = document.getElementById(elementId);
-    if (errorElement) {
-        errorElement.textContent = message;
-        errorElement.style.display = 'block';
-    }
+// Helpers
+function showError(id, message) {
+    const errorDiv = document.getElementById(id);
+    errorDiv.textContent = message;
+    errorDiv.style.display = 'block';
 }
-
 function showFormStatus(type, message) {
     const formStatus = document.getElementById('formStatus');
-    if (formStatus) {
-        formStatus.className = `form-status ${type}`;
-        formStatus.textContent = message;
-        formStatus.style.display = 'block';
-        
-        // Hide after 5 seconds
-        setTimeout(() => {
-            formStatus.style.display = 'none';
-        }, 5000);
-    }
+    formStatus.textContent = message;
+    formStatus.style.color = type === 'success' ? 'green' : 'red';
+}
+function isValidEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
-function isValidEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-}
+
 
 // Chatbot functionality
 const chatbotResponses = {
